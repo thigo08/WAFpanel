@@ -77,7 +77,7 @@
 			<p:fieldset legend="#{messages['authenticatedrule.label']}"
 				toggleable="true" toggleSpeed="500">
 				<h:panelGrid id="fields" columns="3" cellpadding="2" cellspacing="4">
-				
+
 					<h:outputLabel value="#{messages['authenticatedrule.label.id']}: "
 						for="id" styleClass="text-input" />
 					<h:outputText id="id" value="#{authenticatedRuleEditMB.bean.id}" />
@@ -104,13 +104,12 @@
 				</h:panelGrid>
 
 				<br />
-	
+
 				<p:fieldset id="pathException"
 					legend="#{messages['menu.pathexception']}" toggleable="true"
 					toggleSpeed="500">
 					<h:panelGrid id="fieldsException" columns="1">
-						<p:commandButton value="+"
-							title="#{messages['button.add']}"
+						<p:commandButton value="+" title="#{messages['button.add']}"
 							action="#{authenticatedRuleEditMB.addPathException}"
 							update="listException" />
 					</h:panelGrid>
@@ -122,13 +121,13 @@
 						<p:columnGroup type="header">
 							<p:row>
 								<p:column headerText="#{messages['urlpath.label.path']}" />
-								<p:column headerText="#{messages['urlpath.label.regex']}"/>
+								<p:column headerText="#{messages['urlpath.label.regex']}" />
 								<p:column headerText="#{messages['label.acao']}" />
 							</p:row>
 						</p:columnGroup>
 
-						<p:column sortBy="#{exception.url}" >
-							<p:inputText value="#{exception.url}" style="width:100%"/>
+						<p:column sortBy="#{exception.url}">
+							<p:inputText value="#{exception.url}" style="width:100%" />
 						</p:column>
 
 						<p:column style="text-align: center;">
@@ -136,8 +135,8 @@
 						</p:column>
 
 						<p:column style="text-align: center;">
-							<p:commandButton  icon="ui-icon-trash"								
-								title="#{messages['button.delete']}"							
+							<p:commandButton icon="ui-icon-trash"
+								title="#{messages['button.delete']}"
 								action="#{authenticatedRuleEditMB.deletePathException}"
 								update="listException" ajax="true" />
 						</p:column>

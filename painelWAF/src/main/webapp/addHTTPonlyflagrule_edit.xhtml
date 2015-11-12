@@ -49,7 +49,7 @@
 			<p:toolbar>
 				<p:toolbarGroup align="left">
 					<p:commandButton value="#{messages['button.save']}"
-						action="#{addHTTPOnlyFlagRuleEditMB.insert}" 
+						action="#{addHTTPOnlyFlagRuleEditMB.insert}"
 						rendered="#{!addHTTPOnlyFlagRuleEditMB.updateMode}" ajax="false" />
 					<p:commandButton value="#{messages['button.save']}"
 						action="#{addHTTPOnlyFlagRuleEditMB.update}"
@@ -78,21 +78,20 @@
 				toggleable="true" toggleSpeed="500">
 				<h:panelGrid id="fields" columns="3" cellpadding="2" cellspacing="4">
 
-					<h:outputLabel value="#{messages['addHTTPonlyflagrule.label.id']}: "
-						for="id" styleClass="text-input" />
+					<h:outputLabel
+						value="#{messages['addHTTPonlyflagrule.label.id']}: " for="id"
+						styleClass="text-input" />
 					<h:outputText id="id" value="#{addHTTPOnlyFlagRuleEditMB.bean.id}" />
 					<p:message for="id" />
 
 				</h:panelGrid>
-				
+
 				<br />
-	
-				<p:fieldset id="pathException"
-					legend="#{messages['menu.cookie']}" toggleable="true"
-					toggleSpeed="500">
+
+				<p:fieldset id="pathException" legend="#{messages['menu.cookie']}"
+					toggleable="true" toggleSpeed="500">
 					<h:panelGrid id="fieldsException" columns="1">
-						<p:commandButton value="+"
-							title="#{messages['button.add']}"
+						<p:commandButton value="+" title="#{messages['button.add']}"
 							action="#{addHTTPOnlyFlagRuleEditMB.addPathException}"
 							update="listException" />
 					</h:panelGrid>
@@ -108,21 +107,21 @@
 							</p:row>
 						</p:columnGroup>
 
-						<p:column sortBy="#{exception.regex}" >
-							<p:inputText value="#{exception.regex}" style="width:100%"/>
+						<p:column sortBy="#{exception.regex}">
+							<p:inputText value="#{exception.regex}" style="width:100%" />
 						</p:column>
 
 						<p:column style="text-align: center;">
-							<p:commandButton  icon="ui-icon-trash"								
-								title="#{messages['button.delete']}"							
+							<p:commandButton icon="ui-icon-trash"
+								title="#{messages['button.delete']}"
 								action="#{addHTTPOnlyFlagRuleEditMB.deletePathException}"
 								update="listException" ajax="true" />
 						</p:column>
 					</p:dataTable>
 				</p:fieldset>
-				
+
 			</p:fieldset>
-			
+
 			<br />
 		</h:form>
 	</ui:define>

@@ -49,7 +49,7 @@
 			<p:toolbar>
 				<p:toolbarGroup align="left">
 					<p:commandButton value="#{messages['button.save']}"
-						action="#{enforceHTTPSRuleEditMB.insert}" 
+						action="#{enforceHTTPSRuleEditMB.insert}"
 						rendered="#{!enforceHTTPSRuleEditMB.updateMode}" ajax="false" />
 					<p:commandButton value="#{messages['button.save']}"
 						action="#{enforceHTTPSRuleEditMB.update}"
@@ -83,32 +83,32 @@
 					<h:outputText id="id" value="#{enforceHTTPSRuleEditMB.bean.id}" />
 					<p:message for="id" />
 
-				<h:outputLabel
-						value="#{messages['enforceHTTPSrule.label.path']}: " for="path"
-						styleClass="text-input" />
+					<h:outputLabel value="#{messages['enforceHTTPSrule.label.path']}: "
+						for="path" styleClass="text-input" />
 					<h:inputText id="path"
 						value="#{enforceHTTPSRuleEditMB.bean.path.url}"
 						title="#{messages['enforceHTTPSrule.alt.path']}" required="true">
 					</h:inputText>
 					<p:message for="path" />
-					
-				 <p:outputLabel for="action" value="#{messages['enforceHTTPSrule.label.action']}: " />
-       				 <p:selectOneMenu id="action" value="#{enforceHTTPSRuleEditMB.bean.action}" style="width:125px">		            
-			            <f:selectItem itemLabel="REDIRECT" itemValue="redirect" />
-			            <f:selectItem itemLabel="BLOCK" itemValue="block" />
-       				</p:selectOneMenu>
-					<p:message for="action" />	
-					
+
+					<p:outputLabel for="action"
+						value="#{messages['enforceHTTPSrule.label.action']}: " />
+					<p:selectOneMenu id="action"
+						value="#{enforceHTTPSRuleEditMB.bean.action}" style="width:125px">
+						<f:selectItem itemLabel="REDIRECT" itemValue="redirect" />
+						<f:selectItem itemLabel="BLOCK" itemValue="block" />
+					</p:selectOneMenu>
+					<p:message for="action" />
+
 				</h:panelGrid>
-				
+
 				<br />
-	
+
 				<p:fieldset id="pathException"
 					legend="#{messages['menu.pathexception']}" toggleable="true"
 					toggleSpeed="500">
 					<h:panelGrid id="fieldsException" columns="1">
-						<p:commandButton value="+"
-							title="#{messages['button.add']}"
+						<p:commandButton value="+" title="#{messages['button.add']}"
 							action="#{enforceHTTPSRuleEditMB.addPathException}"
 							update="listException" />
 					</h:panelGrid>
@@ -120,13 +120,13 @@
 						<p:columnGroup type="header">
 							<p:row>
 								<p:column headerText="#{messages['urlpath.label.path']}" />
-								<p:column headerText="#{messages['urlpath.label.regex']}"/>
+								<p:column headerText="#{messages['urlpath.label.regex']}" />
 								<p:column headerText="#{messages['label.acao']}" />
 							</p:row>
 						</p:columnGroup>
 
-						<p:column sortBy="#{exception.url}" >
-							<p:inputText value="#{exception.url}" style="width:100%"/>
+						<p:column sortBy="#{exception.url}">
+							<p:inputText value="#{exception.url}" style="width:100%" />
 						</p:column>
 
 						<p:column style="text-align: center;">
@@ -134,15 +134,15 @@
 						</p:column>
 
 						<p:column style="text-align: center;">
-							<p:commandButton  icon="ui-icon-trash"								
-								title="#{messages['button.delete']}"							
+							<p:commandButton icon="ui-icon-trash"
+								title="#{messages['button.delete']}"
 								action="#{enforceHTTPSRuleEditMB.deletePathException}"
 								update="listException" ajax="true" />
 						</p:column>
 					</p:dataTable>
 				</p:fieldset>
 			</p:fieldset>
-			
+
 			<br />
 		</h:form>
 	</ui:define>

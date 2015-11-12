@@ -49,7 +49,7 @@
 			<p:toolbar>
 				<p:toolbarGroup align="left">
 					<p:commandButton value="#{messages['button.save']}"
-						action="#{mustMatchRuleEditMB.insert}" 
+						action="#{mustMatchRuleEditMB.insert}"
 						rendered="#{!mustMatchRuleEditMB.updateMode}" ajax="false" />
 					<p:commandButton value="#{messages['button.save']}"
 						action="#{mustMatchRuleEditMB.update}"
@@ -90,30 +90,31 @@
 					</h:inputText>
 					<p:message for="path" />
 
-					<h:outputLabel value="#{messages['mustmatchrule.label.variable']}: "
+					<h:outputLabel
+						value="#{messages['mustmatchrule.label.variable']}: "
 						for="variable" styleClass="text-input" />
 					<h:inputText id="variable"
 						value="#{mustMatchRuleEditMB.bean.variable}"
 						title="#{messages['mustmatchrule.alt.variable']}" required="true"></h:inputText>
 					<p:message for="variable" />
-					
-					<h:outputLabel value="#{messages['mustmatchrule.label.operator']}: "
+
+					<h:outputLabel
+						value="#{messages['mustmatchrule.label.operator']}: "
 						for="operator" styleClass="text-input" />
 					<h:inputText id="operator"
 						value="#{mustMatchRuleEditMB.bean.operator}"
 						title="#{messages['mustmatchrule.alt.operator']}" required="true"></h:inputText>
 					<p:message for="operator" />
-					
+
 					<h:outputLabel value="#{messages['mustmatchrule.label.value']}: "
 						for="value" styleClass="text-input" />
-					<h:inputText id="value"
-						value="#{mustMatchRuleEditMB.bean.value}"
+					<h:inputText id="value" value="#{mustMatchRuleEditMB.bean.value}"
 						title="#{messages['mustmatchrule.alt.value']}" required="true"></h:inputText>
 					<p:message for="value" />
 
 				</h:panelGrid>
 			</p:fieldset>
-			
+
 			<br />
 		</h:form>
 	</ui:define>

@@ -64,8 +64,7 @@
 						header="#{messages['label.dialog.delete']}" severity="alert"
 						widgetVar="confirmation">
 						<h:commandButton value="#{messages['button.dialog.yes']}"
-							action="#{aliasEditMB.delete}" immediate="true"
-							ajax="false" />
+							action="#{aliasEditMB.delete}" immediate="true" ajax="false" />
 						<h:commandButton value="#{messages['button.dialog.no']}"
 							onclick="PF('confirmation').hide();" type="button" />
 					</p:confirmDialog>
@@ -74,17 +73,14 @@
 
 			<br />
 
-			<p:fieldset legend="#{messages['alias.label']}"
-				toggleable="true" toggleSpeed="500">
+			<p:fieldset legend="#{messages['alias.label']}" toggleable="true"
+				toggleSpeed="500">
 				<h:panelGrid id="fields" columns="3" cellpadding="2" cellspacing="4">
 
-					<h:outputLabel
-						value="#{messages['alias.label.name']}: "
-						for="name" styleClass="text-input" />
-					<h:inputText id="name"
-						value="#{aliasEditMB.bean.name}"
-						title="#{messages['alias.alt.name']}"
-						required="true">
+					<h:outputLabel value="#{messages['alias.label.name']}: " for="name"
+						styleClass="text-input" />
+					<h:inputText id="name" value="#{aliasEditMB.bean.name}"
+						title="#{messages['alias.alt.name']}" required="true">
 					</h:inputText>
 					<p:message for="name" />
 				</h:panelGrid>

@@ -49,7 +49,7 @@
 			<p:toolbar>
 				<p:toolbarGroup align="left">
 					<p:commandButton value="#{messages['button.save']}"
-						action="#{httpMethodRuleEditMB.insert}" 
+						action="#{httpMethodRuleEditMB.insert}"
 						rendered="#{!httpMethodRuleEditMB.updateMode}" ajax="false" />
 					<p:commandButton value="#{messages['button.save']}"
 						action="#{httpMethodRuleEditMB.update}"
@@ -83,20 +83,25 @@
 					<h:outputText id="id" value="#{httpMethodRuleEditMB.bean.id}" />
 					<p:message for="id" />
 
-					<h:outputLabel value="#{messages['HTTPmethodrule.label.allowedMethods']}: "
+					<h:outputLabel
+						value="#{messages['HTTPmethodrule.label.allowedMethods']}: "
 						for="allowedMethods" styleClass="text-input" />
-					<h:inputText id="allowedMethods" value="#{httpMethodRuleEditMB.bean.allowedMethods.regex}"
-						title="#{messages['HTTPmethodrule.alt.allowedMethods']}" required="true">
+					<h:inputText id="allowedMethods"
+						value="#{httpMethodRuleEditMB.bean.allowedMethods.regex}"
+						title="#{messages['HTTPmethodrule.alt.allowedMethods']}"
+						required="true">
 					</h:inputText>
 					<p:message for="allowedMethods" />
 
-					<h:outputLabel value="#{messages['HTTPmethodrule.label.deniedMethods']}: "
+					<h:outputLabel
+						value="#{messages['HTTPmethodrule.label.deniedMethods']}: "
 						for="deniedMethods" styleClass="text-input" />
 					<h:inputText id="deniedMethods"
 						value="#{httpMethodRuleEditMB.bean.deniedMethods.regex}"
-						title="#{messages['HTTPmethodrule.alt.deniedMethods']}" required="true"></h:inputText>
+						title="#{messages['HTTPmethodrule.alt.deniedMethods']}"
+						required="true"></h:inputText>
 					<p:message for="deniedMethods" />
-					
+
 					<h:outputLabel value="#{messages['HTTPmethodrule.label.path']}: "
 						for="path" styleClass="text-input" />
 					<h:inputText id="path"
@@ -106,7 +111,7 @@
 
 				</h:panelGrid>
 			</p:fieldset>
-			
+
 			<br />
 		</h:form>
 	</ui:define>

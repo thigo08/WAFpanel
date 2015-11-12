@@ -1,4 +1,4 @@
- 
+
 <!-- 
  Demoiselle Framework
  Copyright (C) 2013 SERPRO
@@ -46,14 +46,17 @@
 	<ui:define name="body">
 		<h:form prependId="false">
 
-	<p:menubar  style="font-weight: bold; font-size: small"  rendered="#{securityContext.loggedIn}">
-		
-			<p:submenu label="#{messages['menu.alias']}">
-				<p:menuitem value="#{messages['menu.menuitem.new']}" url="/alias_edit.jsf"></p:menuitem>
-				<p:menuitem value="#{messages['menu.menuitem.list']}" url="/alias_list.jsf"></p:menuitem>
-			</p:submenu>
-				
-		</p:menubar>
+			<p:menubar style="font-weight: bold; font-size: small"
+				rendered="#{securityContext.loggedIn}">
+
+				<p:submenu label="#{messages['menu.alias']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/alias_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/alias_list.jsf"></p:menuitem>
+				</p:submenu>
+
+			</p:menubar>
 
 		</h:form>
 	</ui:define>

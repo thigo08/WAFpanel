@@ -1,4 +1,5 @@
- <!-- 
+
+<!-- 
  Demoiselle Framework
  Copyright (C) 2013 SERPRO
  ============================================================================
@@ -35,75 +36,93 @@
  51 Franklin St, Fifth Floor, Boston, MA 02111-1301, USA.
  */
  -->
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui" xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets" template="/template/main.xhtml">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/main.xhtml">
 
 	<ui:define name="body">
 		<h:form>
 			<p:toolbar>
 				<p:toolbarGroup align="left">
-					<p:commandButton title="#{messages['button.new']}" icon="ui-icon-document" action="#{replaceContentRuleListMB.getNextView()}"
+					<p:commandButton title="#{messages['button.new']}"
+						icon="ui-icon-document"
+						action="#{replaceContentRuleListMB.getNextView()}"
 						actionListener="#{replaceContentRuleListMB.clear}" ajax="false" />
 
-					<p:commandButton title="#{messages['button.delete']}" icon="ui-icon-trash" onclick="PF('confirmation').show()"
-						type="button" immediate="true" ajax="false" disabled="#{!securityContext.hasRole('gerente')}" />
+					<p:commandButton title="#{messages['button.delete']}"
+						icon="ui-icon-trash" onclick="PF('confirmation').show()"
+						type="button" immediate="true" ajax="false"
+						disabled="#{!securityContext.hasRole('gerente')}" />
 
-					<p:confirmDialog message="#{messages['label.confirm.delete']}" showEffect="bounce" hideEffect="explode"
-						header="#{messages['label.dialog.alert']}!" severity="alert" widgetVar="confirmation">
+					<p:confirmDialog message="#{messages['label.confirm.delete']}"
+						showEffect="bounce" hideEffect="explode"
+						header="#{messages['label.dialog.alert']}!" severity="alert"
+						widgetVar="confirmation">
 
-						<h:commandButton value="#{messages['button.dialog.yes']}" action="#{replaceContentRuleListMB.deleteSelection}"
+						<h:commandButton value="#{messages['button.dialog.yes']}"
+							action="#{replaceContentRuleListMB.deleteSelection}"
 							actionListener="#{replaceContentRuleListMB.clear}" />
-						<h:commandButton value="#{messages['button.dialog.no']}" onclick="PF('confirmation').hide();" type="button" />
+						<h:commandButton value="#{messages['button.dialog.no']}"
+							onclick="PF('confirmation').hide();" type="button" />
 					</p:confirmDialog>
 				</p:toolbarGroup>
 			</p:toolbar>
-			<p:dataTable id="list" var="bean" value="#{replaceContentRuleListMB.resultList}">
+			<p:dataTable id="list" var="bean"
+				value="#{replaceContentRuleListMB.resultList}">
 				<f:facet name="header">#{messages['replacecontentrule.list.table.title']}</f:facet>
 				<p:column style="width:5%;">
-					<h:selectBooleanCheckbox value="#{replaceContentRuleListMB.selection[bean.id]}"></h:selectBooleanCheckbox>
+					<h:selectBooleanCheckbox
+						value="#{replaceContentRuleListMB.selection[bean.id]}"></h:selectBooleanCheckbox>
 				</p:column>
-				
+
 				<p:column sortBy="#{bean.id}">
 					<f:facet name="header">#{messages['replacecontentrule.label.id']}</f:facet>
-					<h:commandLink action="#{replaceContentRuleListMB.getNextView()}" actionListener="#{replaceContentRuleListMB.clear}">
+					<h:commandLink action="#{replaceContentRuleListMB.getNextView()}"
+						actionListener="#{replaceContentRuleListMB.clear}">
 						<h:outputText value="#{bean.id}" />
 						<f:param name="id" value="#{bean.id}" />
 					</h:commandLink>
 				</p:column>
-						
+
 				<p:column sortBy="#{bean.pattern.regex}">
 					<f:facet name="header">#{messages['replacecontentrule.label.pattern']}</f:facet>
-					<h:commandLink action="#{replaceContentRuleListMB.getNextView()}" actionListener="#{replaceContentRuleListMB.clear}">
+					<h:commandLink action="#{replaceContentRuleListMB.getNextView()}"
+						actionListener="#{replaceContentRuleListMB.clear}">
 						<h:outputText value="#{bean.pattern.regex}" />
 						<f:param name="id" value="#{bean.id}" />
 					</h:commandLink>
 				</p:column>
-				
+
 				<p:column sortBy="#{bean.replacement}">
 					<f:facet name="header">#{messages['replacecontentrule.label.replacement']}</f:facet>
-					<h:commandLink action="#{replaceContentRuleListMB.getNextView()}" actionListener="#{replaceContentRuleListMB.clear}">
+					<h:commandLink action="#{replaceContentRuleListMB.getNextView()}"
+						actionListener="#{replaceContentRuleListMB.clear}">
 						<h:outputText value="#{bean.replacement}" />
 						<f:param name="id" value="#{bean.id}" />
 					</h:commandLink>
 				</p:column>
-				
+
 				<p:column sortBy="#{bean.contentType.regex}">
 					<f:facet name="header">#{messages['replacecontentrule.label.path']}</f:facet>
-					<h:commandLink action="#{replaceContentRuleListMB.getNextView()}" actionListener="#{replaceContentRuleListMB.clear}">
+					<h:commandLink action="#{replaceContentRuleListMB.getNextView()}"
+						actionListener="#{replaceContentRuleListMB.clear}">
 						<h:outputText value="#{bean.contentType.regex}" />
 						<f:param name="id" value="#{bean.id}" />
 					</h:commandLink>
 				</p:column>
-				
+
 				<p:column sortBy="#{bean.path.url}">
 					<f:facet name="header">#{messages['addheaderrule.label.sessionAttribute']}</f:facet>
-					<h:commandLink action="#{replaceContentRuleListMB.getNextView()}" actionListener="#{replaceContentRuleListMB.clear}">
+					<h:commandLink action="#{replaceContentRuleListMB.getNextView()}"
+						actionListener="#{replaceContentRuleListMB.clear}">
 						<h:outputText value="#{bean.path.url}" />
 						<f:param name="id" value="#{bean.id}" />
 					</h:commandLink>
 				</p:column>
-						
+
 			</p:dataTable>
 		</h:form>
 

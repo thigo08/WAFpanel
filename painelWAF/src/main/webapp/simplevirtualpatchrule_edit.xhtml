@@ -49,15 +49,16 @@
 			<p:toolbar>
 				<p:toolbarGroup align="left">
 					<p:commandButton value="#{messages['button.save']}"
-						action="#{simpleVirtualPatchRuleEditMB.insert}" 
-						rendered="#{!simpleVirtualPatchRuleEditMB.updateMode}" ajax="false" />
+						action="#{simpleVirtualPatchRuleEditMB.insert}"
+						rendered="#{!simpleVirtualPatchRuleEditMB.updateMode}"
+						ajax="false" />
 					<p:commandButton value="#{messages['button.save']}"
 						action="#{simpleVirtualPatchRuleEditMB.update}"
 						rendered="#{simpleVirtualPatchRuleEditMB.updateMode}" ajax="false" />
 					<p:commandButton value="#{messages['button.delete']}"
 						onclick="PF('confirmation').show()"
-						rendered="#{simpleVirtualPatchRuleEditMB.updateMode}" type="button"
-						immediate="true" ajax="false"
+						rendered="#{simpleVirtualPatchRuleEditMB.updateMode}"
+						type="button" immediate="true" ajax="false"
 						disabled="#{!securityContext.hasRole('gerente')}" />
 					<p:confirmDialog message="#{messages['label.confirm.delete']}"
 						showEffect="bounce" hideEffect="explode"
@@ -78,42 +79,53 @@
 				toggleable="true" toggleSpeed="500">
 				<h:panelGrid id="fields" columns="3" cellpadding="2" cellspacing="4">
 
-					<h:outputLabel value="#{messages['simplevirtualpatchrule.label.id']}: "
-						for="id" styleClass="text-input" />
-					<h:outputText id="id" value="#{simpleVirtualPatchRuleEditMB.bean.id}" />
+					<h:outputLabel
+						value="#{messages['simplevirtualpatchrule.label.id']}: " for="id"
+						styleClass="text-input" />
+					<h:outputText id="id"
+						value="#{simpleVirtualPatchRuleEditMB.bean.id}" />
 					<p:message for="id" />
 
-					<h:outputLabel value="#{messages['simplevirtualpatchrule.label.path']}: "
+					<h:outputLabel
+						value="#{messages['simplevirtualpatchrule.label.path']}: "
 						for="path" styleClass="text-input" />
-					<h:inputText id="path" value="#{simpleVirtualPatchRuleEditMB.bean.path.url}"
-						title="#{messages['simplevirtualpatchrule.alt.path']}" required="true">
+					<h:inputText id="path"
+						value="#{simpleVirtualPatchRuleEditMB.bean.path.url}"
+						title="#{messages['simplevirtualpatchrule.alt.path']}"
+						required="true">
 					</h:inputText>
 					<p:message for="path" />
 
-					<h:outputLabel value="#{messages['simplevirtualpatchrule.label.variable']}: "
+					<h:outputLabel
+						value="#{messages['simplevirtualpatchrule.label.variable']}: "
 						for="variable" styleClass="text-input" />
 					<h:inputText id="variable"
 						value="#{simpleVirtualPatchRuleEditMB.bean.variable}"
-						title="#{messages['simplevirtualpatchrule.alt.variable']}" required="true"></h:inputText>
+						title="#{messages['simplevirtualpatchrule.alt.variable']}"
+						required="true"></h:inputText>
 					<p:message for="variable" />
-					
-					<h:outputLabel value="#{messages['simplevirtualpatchrule.label.valid']}: "
+
+					<h:outputLabel
+						value="#{messages['simplevirtualpatchrule.label.valid']}: "
 						for="valid" styleClass="text-input" />
 					<h:inputText id="valid"
 						value="#{simpleVirtualPatchRuleEditMB.bean.valid.regex}"
-						title="#{messages['simplevirtualpatchrule.alt.valid']}" required="true"></h:inputText>
+						title="#{messages['simplevirtualpatchrule.alt.valid']}"
+						required="true"></h:inputText>
 					<p:message for="valid" />
-					
-					<h:outputLabel value="#{messages['simplevirtualpatchrule.label.message']}: "
+
+					<h:outputLabel
+						value="#{messages['simplevirtualpatchrule.label.message']}: "
 						for="message" styleClass="text-input" />
 					<h:inputText id="message"
 						value="#{simpleVirtualPatchRuleEditMB.bean.message}"
-						title="#{messages['simplevirtualpatchrule.alt.message']}" required="true"></h:inputText>
+						title="#{messages['simplevirtualpatchrule.alt.message']}"
+						required="true"></h:inputText>
 					<p:message for="message" />
 
 				</h:panelGrid>
 			</p:fieldset>
-			
+
 			<br />
 		</h:form>
 	</ui:define>

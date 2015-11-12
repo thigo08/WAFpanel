@@ -49,7 +49,7 @@
 			<p:toolbar>
 				<p:toolbarGroup align="left">
 					<p:commandButton value="#{messages['button.save']}"
-						action="#{replaceContentRuleEditMB.insert}" 
+						action="#{replaceContentRuleEditMB.insert}"
 						rendered="#{!replaceContentRuleEditMB.updateMode}" ajax="false" />
 					<p:commandButton value="#{messages['button.save']}"
 						action="#{replaceContentRuleEditMB.update}"
@@ -83,29 +83,37 @@
 					<h:outputText id="id" value="#{replaceContentRuleEditMB.bean.id}" />
 					<p:message for="id" />
 
-					<h:outputLabel value="#{messages['replacecontentrule.label.pattern']}: "
+					<h:outputLabel
+						value="#{messages['replacecontentrule.label.pattern']}: "
 						for="pattern" styleClass="text-input" />
-					<h:inputText id="pattern" value="#{replaceContentRuleEditMB.bean.pattern.regex}"
-						title="#{messages['replacecontentrule.alt.pattern']}" required="true">
+					<h:inputText id="pattern"
+						value="#{replaceContentRuleEditMB.bean.pattern.regex}"
+						title="#{messages['replacecontentrule.alt.pattern']}"
+						required="true">
 					</h:inputText>
 					<p:message for="pattern" />
 
-					<h:outputLabel value="#{messages['replacecontentrule.label.replacement']}: "
+					<h:outputLabel
+						value="#{messages['replacecontentrule.label.replacement']}: "
 						for="replacement" styleClass="text-input" />
 					<h:inputText id="replacement"
 						value="#{replaceContentRuleEditMB.bean.replacement}"
-						title="#{messages['replacecontentrule.alt.replacement']}" required="true"></h:inputText>
+						title="#{messages['replacecontentrule.alt.replacement']}"
+						required="true"></h:inputText>
 					<p:message for="replacement" />
-					
-					<h:outputLabel value="#{messages['replacecontentrule.label.contentType']}: "
+
+					<h:outputLabel
+						value="#{messages['replacecontentrule.label.contentType']}: "
 						for="contentType" styleClass="text-input" />
 					<h:inputText id="contentType"
 						value="#{replaceContentRuleEditMB.bean.contentType.regex}"
-						title="#{messages['replacecontentrule.alt.contentType']}" required="true"></h:inputText>
+						title="#{messages['replacecontentrule.alt.contentType']}"
+						required="true"></h:inputText>
 					<p:message for="contentType" />
-					
-					<h:outputLabel value="#{messages['replacecontentrule.label.path']}: "
-						for="path" styleClass="text-input" />
+
+					<h:outputLabel
+						value="#{messages['replacecontentrule.label.path']}: " for="path"
+						styleClass="text-input" />
 					<h:inputText id="path"
 						value="#{replaceContentRuleEditMB.bean.path.url}"
 						title="#{messages['replacecontentrule.alt.path']}" required="true"></h:inputText>
@@ -113,7 +121,7 @@
 
 				</h:panelGrid>
 			</p:fieldset>
-			
+
 			<br />
 		</h:form>
 	</ui:define>

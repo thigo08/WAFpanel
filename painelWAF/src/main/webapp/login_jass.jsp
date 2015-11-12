@@ -1,4 +1,5 @@
- <!-- 
+
+<!-- 
  Demoiselle Framework
  Copyright (C) 2013 SERPRO
  ============================================================================
@@ -35,37 +36,31 @@
  51 Franklin St, Fifth Floor, Boston, MA 02111-1301, USA.
  */
  -->
-<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <html lang="pt-br">
 <head>
-	<title>escola - Login</title>
-	<meta http-equiv="PRAGMA" content="NO-CACHE">
-	<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
-	<meta http-equiv="Expires" content="-1">
+<title>escola - Login</title>
+<meta http-equiv="PRAGMA" content="NO-CACHE">
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+<meta http-equiv="Expires" content="-1">
 </head>
-<body marginheight="0" marginwidth="0" bottommargin="0" leftmargin="0" rightmargin="0" topmargin="0">
+<body marginheight="0" marginwidth="0" bottommargin="0" leftmargin="0"
+	rightmargin="0" topmargin="0">
 	<form method="post" action="j_security_check">
 		<table align="center">
 			<tr>
-				<td>
-					<label for="txt_username">Login:</label>
-				</td>
-				<td>
-					<input id="txt_username" type="text" name="j_username" tabindex="1" title="Informe o usuário"/>
-				</td>
+				<td><label for="txt_username">Login:</label></td>
+				<td><input id="txt_username" type="text" name="j_username"
+					tabindex="1" title="Informe o usuário" /></td>
 			</tr>
 			<tr>
-				<td>
-					<label for="txt_password">Senha:</label>
-				</td>
-				<td>
-					<input id="txt_password" type="password" name= "j_password" tabindex="2" title="Informe a senha do usuário"/>
-				</td>
+				<td><label for="txt_password">Senha:</label></td>
+				<td><input id="txt_password" type="password" name="j_password"
+					tabindex="2" title="Informe a senha do usuário" /></td>
 			</tr>
 			<tr>
-				<td colspan="2" align="right">
-					<input type="submit" value="login" tabindex="3" />
-				</td>
+				<td colspan="2" align="right"><input type="submit"
+					value="login" tabindex="3" /></td>
 			</tr>
 		</table>
 	</form>

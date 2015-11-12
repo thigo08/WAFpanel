@@ -49,7 +49,7 @@
 			<p:toolbar>
 				<p:toolbarGroup align="left">
 					<p:commandButton value="#{messages['button.save']}"
-						action="#{addSecureFlagRuleEditMB.insert}" 
+						action="#{addSecureFlagRuleEditMB.insert}"
 						rendered="#{!addSecureFlagRuleEditMB.updateMode}" ajax="false" />
 					<p:commandButton value="#{messages['button.save']}"
 						action="#{addSecureFlagRuleEditMB.update}"
@@ -82,24 +82,21 @@
 						for="id" styleClass="text-input" />
 					<h:outputText id="id" value="#{addSecureFlagRuleEditMB.bean.id}" />
 					<p:message for="id" />
-					
+
 				</h:panelGrid>
-				
+
 				<br />
-	
-				<p:fieldset id="pathException"
-					legend="#{messages['menu.cookie']}" toggleable="true"
-					toggleSpeed="500">
+
+				<p:fieldset id="pathException" legend="#{messages['menu.cookie']}"
+					toggleable="true" toggleSpeed="500">
 					<h:panelGrid id="fieldsException" columns="1">
-						<p:commandButton value="+"
-							title="#{messages['button.add']}"
+						<p:commandButton value="+" title="#{messages['button.add']}"
 							action="#{addSecureFlagRuleEditMB.addPathException}"
 							update="listException" />
 					</h:panelGrid>
 					<p:dataTable id="listException" var="exception"
 						resizableColumns="true"
-						value="#{addSecureFlagRuleEditMB.cookieName}"
-						rowIndexVar="index">
+						value="#{addSecureFlagRuleEditMB.cookieName}" rowIndexVar="index">
 
 						<p:columnGroup type="header">
 							<p:row>
@@ -108,21 +105,21 @@
 							</p:row>
 						</p:columnGroup>
 
-						<p:column sortBy="#{exception.regex}" >
-							<p:inputText value="#{exception.regex}" style="width:100%"/>
+						<p:column sortBy="#{exception.regex}">
+							<p:inputText value="#{exception.regex}" style="width:100%" />
 						</p:column>
 
 						<p:column style="text-align: center;">
-							<p:commandButton  icon="ui-icon-trash"								
-								title="#{messages['button.delete']}"							
+							<p:commandButton icon="ui-icon-trash"
+								title="#{messages['button.delete']}"
 								action="#{addSecureFlagRuleEditMB.deletePathException}"
 								update="listException" ajax="true" />
 						</p:column>
 					</p:dataTable>
 				</p:fieldset>
-				
+
 			</p:fieldset>
-			
+
 			<br />
 		</h:form>
 	</ui:define>

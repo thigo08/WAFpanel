@@ -1,4 +1,5 @@
- <!-- 
+
+<!-- 
  Demoiselle Framework
  Copyright (C) 2013 SERPRO
  ============================================================================
@@ -35,79 +36,82 @@
  51 Franklin St, Fifth Floor, Boston, MA 02111-1301, USA.
  */
  -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
-<h:head></h:head> 
-<body> 
-<h:form>
+<h:head></h:head>
+<body>
+	<h:form>
 
-    <h3>DateTime</h3>
-    <p:calendar value="#{calendarBean.date1}" pattern="MM/dd/yyyy HH:mm" />
+		<h3>DateTime</h3>
+		<p:calendar value="#{calendarBean.date1}" pattern="MM/dd/yyyy HH:mm" />
 
-    <h3>TimeOnly</h3>
-    <p:calendar value="#{calendarBean.date2}" pattern="HH:mm" timeOnly="true" />
+		<h3>TimeOnly</h3>
+		<p:calendar value="#{calendarBean.date2}" pattern="HH:mm"
+			timeOnly="true" />
 
-    <h3>AM/PM</h3>
-    <p:calendar value="#{calendarBean.date3}" pattern="MM/dd/yyyy hh:mm a"/>
+		<h3>AM/PM</h3>
+		<p:calendar value="#{calendarBean.date3}" pattern="MM/dd/yyyy hh:mm a" />
 
-    <h3>Seconds</h3>
-    <p:calendar value="#{calendarBean.date4}" pattern="MM/dd/yyyy HH:mm:ss" />
+		<h3>Seconds</h3>
+		<p:calendar value="#{calendarBean.date4}"
+			pattern="MM/dd/yyyy HH:mm:ss" />
 
-    <h3>Steps</h3>
-    <p:calendar value="#{calendarBean.date5}" pattern="MM/dd/yyyy HH:mm:ss"
-                stepHour="2" stepMinute="10" stepSecond="10"/>
+		<h3>Steps</h3>
+		<p:calendar value="#{calendarBean.date5}"
+			pattern="MM/dd/yyyy HH:mm:ss" stepHour="2" stepMinute="10"
+			stepSecond="10" />
 
-    <h3>Min/Max</h3>
-    <p:calendar value="#{calendarBean.date6}" pattern="MM/dd/yyyy HH:mm"
-                minHour="9" maxHour="18"/>
+		<h3>Min/Max</h3>
+		<p:calendar value="#{calendarBean.date6}" pattern="MM/dd/yyyy HH:mm"
+			minHour="9" maxHour="18" />
 
-    <p:commandButton value="Submit" update="display" oncomplete="dialog.show()" />
+		<p:commandButton value="Submit" update="display"
+			oncomplete="dialog.show()" />
 
-    <p:dialog header="Selected Dates" widgetVar="dialog"
-                showEffect="fold" hideEffect="fold"
-                height="225">
+		<p:dialog header="Selected Dates" widgetVar="dialog" showEffect="fold"
+			hideEffect="fold" height="225">
 
-        <h:panelGrid id="display" columns="2" cellpadding="5">
+			<h:panelGrid id="display" columns="2" cellpadding="5">
 
-            <h:outputText value="DateTime: " />
-            <h:outputText value="#{calendarBean.date1}">
-                <f:convertDateTime pattern="MM/dd/yyyy HH:mm" />
-            </h:outputText>
+				<h:outputText value="DateTime: " />
+				<h:outputText value="#{calendarBean.date1}">
+					<f:convertDateTime pattern="MM/dd/yyyy HH:mm" />
+				</h:outputText>
 
-            <h:outputText value="Time Only: " />
-            <h:outputText value="#{calendarBean.date2}">
-                <f:convertDateTime pattern="HH:mm" />
-            </h:outputText>
+				<h:outputText value="Time Only: " />
+				<h:outputText value="#{calendarBean.date2}">
+					<f:convertDateTime pattern="HH:mm" />
+				</h:outputText>
 
-            <h:outputText value="AM/PM: " />
-            <h:outputText value="#{calendarBean.date3}">
-                <f:convertDateTime pattern="MM/dd/yyyy hh:mm a"/>
-            </h:outputText>
+				<h:outputText value="AM/PM: " />
+				<h:outputText value="#{calendarBean.date3}">
+					<f:convertDateTime pattern="MM/dd/yyyy hh:mm a" />
+				</h:outputText>
 
-            <h:outputText value="Seconds: " />
-            <h:outputText value="#{calendarBean.date4}">
-                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-            </h:outputText>
+				<h:outputText value="Seconds: " />
+				<h:outputText value="#{calendarBean.date4}">
+					<f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+				</h:outputText>
 
-            <h:outputText value="Step: " />
-            <h:outputText value="#{calendarBean.date5}">
-                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-            </h:outputText>
+				<h:outputText value="Step: " />
+				<h:outputText value="#{calendarBean.date5}">
+					<f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+				</h:outputText>
 
-            <h:outputText value="Min/Max: " />
-            <h:outputText value="#{calendarBean.date6}">
-                <f:convertDateTime pattern="MM/dd/yyyy HH:mm" />
-            </h:outputText>
+				<h:outputText value="Min/Max: " />
+				<h:outputText value="#{calendarBean.date6}">
+					<f:convertDateTime pattern="MM/dd/yyyy HH:mm" />
+				</h:outputText>
 
-        </h:panelGrid>
-    </p:dialog>
+			</h:panelGrid>
+		</p:dialog>
 
-</h:form>
+	</h:form>
 
-</body> 
+</body>
 </html>

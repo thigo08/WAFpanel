@@ -49,23 +49,25 @@
 			<p:toolbar>
 				<p:toolbarGroup align="left">
 					<p:commandButton value="#{messages['button.save']}"
-						action="#{detectOutboundContentRuleEditMB.insert}" 
-						rendered="#{!detectOutboundContentRuleEditMB.updateMode}" ajax="false" />
+						action="#{detectOutboundContentRuleEditMB.insert}"
+						rendered="#{!detectOutboundContentRuleEditMB.updateMode}"
+						ajax="false" />
 					<p:commandButton value="#{messages['button.save']}"
 						action="#{detectOutboundContentRuleEditMB.update}"
-						rendered="#{detectOutboundContentRuleEditMB.updateMode}" ajax="false" />
+						rendered="#{detectOutboundContentRuleEditMB.updateMode}"
+						ajax="false" />
 					<p:commandButton value="#{messages['button.delete']}"
 						onclick="PF('confirmation').show()"
-						rendered="#{detectOutboundContentRuleEditMB.updateMode}" type="button"
-						immediate="true" ajax="false"
+						rendered="#{detectOutboundContentRuleEditMB.updateMode}"
+						type="button" immediate="true" ajax="false"
 						disabled="#{!securityContext.hasRole('gerente')}" />
 					<p:confirmDialog message="#{messages['label.confirm.delete']}"
 						showEffect="bounce" hideEffect="explode"
 						header="#{messages['label.dialog.delete']}" severity="alert"
 						widgetVar="confirmation">
 						<h:commandButton value="#{messages['button.dialog.yes']}"
-							action="#{detectOutboundContentRuleEditMB.delete}" immediate="true"
-							ajax="false" />
+							action="#{detectOutboundContentRuleEditMB.delete}"
+							immediate="true" ajax="false" />
 						<h:commandButton value="#{messages['button.dialog.no']}"
 							onclick="PF('confirmation').hide();" type="button" />
 					</p:confirmDialog>
@@ -78,35 +80,44 @@
 				toggleable="true" toggleSpeed="500">
 				<h:panelGrid id="fields" columns="3" cellpadding="2" cellspacing="4">
 
-					<h:outputLabel value="#{messages['detectoutboundcontentrule.label.id']}: "
+					<h:outputLabel
+						value="#{messages['detectoutboundcontentrule.label.id']}: "
 						for="id" styleClass="text-input" />
-					<h:outputText id="id" value="#{detectOutboundContentRuleEditMB.bean.id}" />
+					<h:outputText id="id"
+						value="#{detectOutboundContentRuleEditMB.bean.id}" />
 					<p:message for="id" />
 
-					<h:outputLabel value="#{messages['detectoutboundcontentrule.label.contentType']}: "
+					<h:outputLabel
+						value="#{messages['detectoutboundcontentrule.label.contentType']}: "
 						for="contentType" styleClass="text-input" />
-					<h:inputText id="contentType" value="#{detectOutboundContentRuleEditMB.bean.contentType.regex}"
-						title="#{messages['detectoutboundcontentrule.alt.contentType']}" required="true">
+					<h:inputText id="contentType"
+						value="#{detectOutboundContentRuleEditMB.bean.contentType.regex}"
+						title="#{messages['detectoutboundcontentrule.alt.contentType']}"
+						required="true">
 					</h:inputText>
 					<p:message for="contentType" />
 
-					<h:outputLabel value="#{messages['detectoutboundcontentrule.label.pattern']}: "
+					<h:outputLabel
+						value="#{messages['detectoutboundcontentrule.label.pattern']}: "
 						for="pattern" styleClass="text-input" />
 					<h:inputText id="pattern"
 						value="#{detectOutboundContentRuleEditMB.bean.pattern.regex}"
-						title="#{messages['detectoutboundcontentrule.alt.pattern']}" required="true"></h:inputText>
+						title="#{messages['detectoutboundcontentrule.alt.pattern']}"
+						required="true"></h:inputText>
 					<p:message for="pattern" />
-					
-					<h:outputLabel value="#{messages['detectoutboundcontentrule.label.uri']}: "
+
+					<h:outputLabel
+						value="#{messages['detectoutboundcontentrule.label.uri']}: "
 						for="uri" styleClass="text-input" />
 					<h:inputText id="uri"
 						value="#{detectOutboundContentRuleEditMB.bean.path.url}"
-						title="#{messages['detectoutboundcontentrule.alt.uri']}" required="true"></h:inputText>
+						title="#{messages['detectoutboundcontentrule.alt.uri']}"
+						required="true"></h:inputText>
 					<p:message for="uri" />
 
 				</h:panelGrid>
 			</p:fieldset>
-			
+
 			<br />
 		</h:form>
 	</ui:define>

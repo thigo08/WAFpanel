@@ -49,7 +49,7 @@
 			<p:toolbar>
 				<p:toolbarGroup align="left">
 					<p:commandButton value="#{messages['button.save']}"
-						action="#{restrictUserAgentRuleEditMB.insert}" 
+						action="#{restrictUserAgentRuleEditMB.insert}"
 						rendered="#{!restrictUserAgentRuleEditMB.updateMode}" ajax="false" />
 					<p:commandButton value="#{messages['button.save']}"
 						action="#{restrictUserAgentRuleEditMB.update}"
@@ -78,28 +78,35 @@
 				toggleable="true" toggleSpeed="500">
 				<h:panelGrid id="fields" columns="3" cellpadding="2" cellspacing="4">
 
-					<h:outputLabel value="#{messages['restrictuseragentrule.label.id']}: "
-						for="id" styleClass="text-input" />
-					<h:outputText id="id" value="#{restrictUserAgentRuleEditMB.bean.id}" />
+					<h:outputLabel
+						value="#{messages['restrictuseragentrule.label.id']}: " for="id"
+						styleClass="text-input" />
+					<h:outputText id="id"
+						value="#{restrictUserAgentRuleEditMB.bean.id}" />
 					<p:message for="id" />
 
-					<h:outputLabel value="#{messages['restrictuseragentrule.label.allow']}: "
+					<h:outputLabel
+						value="#{messages['restrictuseragentrule.label.allow']}: "
 						for="allow" styleClass="text-input" />
-					<h:inputText id="allow" value="#{restrictUserAgentRuleEditMB.bean.allow.regex}"
-						title="#{messages['restrictuseragentrule.alt.allow']}" required="true">
+					<h:inputText id="allow"
+						value="#{restrictUserAgentRuleEditMB.bean.allow.regex}"
+						title="#{messages['restrictuseragentrule.alt.allow']}"
+						required="true">
 					</h:inputText>
 					<p:message for="allow" />
 
-					<h:outputLabel value="#{messages['restrictuseragentrule.label.deny']}: "
+					<h:outputLabel
+						value="#{messages['restrictuseragentrule.label.deny']}: "
 						for="deny" styleClass="text-input" />
 					<h:inputText id="deny"
 						value="#{restrictUserAgentRuleEditMB.bean.deny.regex}"
-						title="#{messages['restrictuseragentrule.alt.deny']}" required="true"></h:inputText>
+						title="#{messages['restrictuseragentrule.alt.deny']}"
+						required="true"></h:inputText>
 					<p:message for="deny" />
 
 				</h:panelGrid>
 			</p:fieldset>
-			
+
 			<br />
 		</h:form>
 	</ui:define>

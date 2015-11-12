@@ -49,7 +49,7 @@
 			<p:toolbar>
 				<p:toolbarGroup align="left">
 					<p:commandButton value="#{messages['button.save']}"
-						action="#{pathExtensionRuleEditMB.insert}" 
+						action="#{pathExtensionRuleEditMB.insert}"
 						rendered="#{!pathExtensionRuleEditMB.updateMode}" ajax="false" />
 					<p:commandButton value="#{messages['button.save']}"
 						action="#{pathExtensionRuleEditMB.update}"
@@ -83,15 +83,18 @@
 					<h:outputText id="id" value="#{pathExtensionRuleEditMB.bean.id}" />
 					<p:message for="id" />
 
-					<h:outputLabel value="#{messages['pathextensionrule.label.allow']}: "
-						for="allow" styleClass="text-input" />
-					<h:inputText id="allow" value="#{pathExtensionRuleEditMB.bean.allow.regex}"
+					<h:outputLabel
+						value="#{messages['pathextensionrule.label.allow']}: " for="allow"
+						styleClass="text-input" />
+					<h:inputText id="allow"
+						value="#{pathExtensionRuleEditMB.bean.allow.regex}"
 						title="#{messages['pathextensionrule.alt.allow']}" required="true">
 					</h:inputText>
 					<p:message for="allow" />
 
-					<h:outputLabel value="#{messages['pathextensionrule.label.deny']}: "
-						for="deny" styleClass="text-input" />
+					<h:outputLabel
+						value="#{messages['pathextensionrule.label.deny']}: " for="deny"
+						styleClass="text-input" />
 					<h:inputText id="deny"
 						value="#{pathExtensionRuleEditMB.bean.deny.regex}"
 						title="#{messages['pathextensionrule.alt.deny']}" required="true"></h:inputText>
@@ -99,7 +102,7 @@
 
 				</h:panelGrid>
 			</p:fieldset>
-			
+
 			<br />
 		</h:form>
 	</ui:define>

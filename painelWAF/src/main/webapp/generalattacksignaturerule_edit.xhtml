@@ -49,23 +49,25 @@
 			<p:toolbar>
 				<p:toolbarGroup align="left">
 					<p:commandButton value="#{messages['button.save']}"
-						action="#{generalAttackSignatureRuleEditMB.insert}" 
-						rendered="#{!generalAttackSignatureRuleEditMB.updateMode}" ajax="false" />
+						action="#{generalAttackSignatureRuleEditMB.insert}"
+						rendered="#{!generalAttackSignatureRuleEditMB.updateMode}"
+						ajax="false" />
 					<p:commandButton value="#{messages['button.save']}"
 						action="#{generalAttackSignatureRuleEditMB.update}"
-						rendered="#{generalAttackSignatureRuleEditMB.updateMode}" ajax="false" />
+						rendered="#{generalAttackSignatureRuleEditMB.updateMode}"
+						ajax="false" />
 					<p:commandButton value="#{messages['button.delete']}"
 						onclick="PF('confirmation').show()"
-						rendered="#{generalAttackSignatureRuleEditMB.updateMode}" type="button"
-						immediate="true" ajax="false"
+						rendered="#{generalAttackSignatureRuleEditMB.updateMode}"
+						type="button" immediate="true" ajax="false"
 						disabled="#{!securityContext.hasRole('gerente')}" />
 					<p:confirmDialog message="#{messages['label.confirm.delete']}"
 						showEffect="bounce" hideEffect="explode"
 						header="#{messages['label.dialog.delete']}" severity="alert"
 						widgetVar="confirmation">
 						<h:commandButton value="#{messages['button.dialog.yes']}"
-							action="#{generalAttackSignatureRuleEditMB.delete}" immediate="true"
-							ajax="false" />
+							action="#{generalAttackSignatureRuleEditMB.delete}"
+							immediate="true" ajax="false" />
 						<h:commandButton value="#{messages['button.dialog.no']}"
 							onclick="PF('confirmation').hide();" type="button" />
 					</p:confirmDialog>
@@ -78,21 +80,25 @@
 				toggleable="true" toggleSpeed="500">
 				<h:panelGrid id="fields" columns="3" cellpadding="2" cellspacing="4">
 
-					<h:outputLabel value="#{messages['generalattacksignaturerule.label.id']}: "
+					<h:outputLabel
+						value="#{messages['generalattacksignaturerule.label.id']}: "
 						for="id" styleClass="text-input" />
-					<h:outputText id="id" value="#{generalAttackSignatureRuleEditMB.bean.id}" />
+					<h:outputText id="id"
+						value="#{generalAttackSignatureRuleEditMB.bean.id}" />
 					<p:message for="id" />
 
-					<h:outputLabel value="#{messages['generalattacksignaturerule.label.signature']}: "
+					<h:outputLabel
+						value="#{messages['generalattacksignaturerule.label.signature']}: "
 						for="signature" styleClass="text-input" />
 					<h:inputText id="signature"
 						value="#{generalAttackSignatureRuleEditMB.bean.signature.regex}"
-						title="#{messages['generalattacksignaturerule.alt.signature']}" required="true"></h:inputText>
+						title="#{messages['generalattacksignaturerule.alt.signature']}"
+						required="true"></h:inputText>
 					<p:message for="signature" />
 
 				</h:panelGrid>
 			</p:fieldset>
-			
+
 			<br />
 		</h:form>
 	</ui:define>

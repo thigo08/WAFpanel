@@ -49,7 +49,7 @@
 			<p:toolbar>
 				<p:toolbarGroup align="left">
 					<p:commandButton value="#{messages['button.save']}"
-						action="#{ipRuleEditMB.insert}" 
+						action="#{ipRuleEditMB.insert}"
 						rendered="#{!ipRuleEditMB.updateMode}" ajax="false" />
 					<p:commandButton value="#{messages['button.save']}"
 						action="#{ipRuleEditMB.update}"
@@ -64,8 +64,7 @@
 						header="#{messages['label.dialog.delete']}" severity="alert"
 						widgetVar="confirmation">
 						<h:commandButton value="#{messages['button.dialog.yes']}"
-							action="#{ipRuleEditMB.delete}" immediate="true"
-							ajax="false" />
+							action="#{ipRuleEditMB.delete}" immediate="true" ajax="false" />
 						<h:commandButton value="#{messages['button.dialog.no']}"
 							onclick="PF('confirmation').hide();" type="button" />
 					</p:confirmDialog>
@@ -74,39 +73,38 @@
 
 			<br />
 
-			<p:fieldset legend="#{messages['IPrule.label']}"
-				toggleable="true" toggleSpeed="500">
+			<p:fieldset legend="#{messages['IPrule.label']}" toggleable="true"
+				toggleSpeed="500">
 				<h:panelGrid id="fields" columns="3" cellpadding="2" cellspacing="4">
 
-					<h:outputLabel value="#{messages['IPrule.label.id']}: "
-						for="id" styleClass="text-input" />
+					<h:outputLabel value="#{messages['IPrule.label.id']}: " for="id"
+						styleClass="text-input" />
 					<h:outputText id="id" value="#{ipRuleEditMB.bean.id}" />
 					<p:message for="id" />
 
 					<h:outputLabel value="#{messages['IPrule.label.allowedIP']}: "
 						for="allowedIP" styleClass="text-input" />
-					<h:inputText id="allowedIP" value="#{ipRuleEditMB.bean.allowedIP.regex}"
+					<h:inputText id="allowedIP"
+						value="#{ipRuleEditMB.bean.allowedIP.regex}"
 						title="#{messages['IPrule.alt.allowedIP']}" required="true">
 					</h:inputText>
 					<p:message for="allowedIP" />
 
 					<h:outputLabel value="#{messages['IPrule.label.path']}: "
 						for="path" styleClass="text-input" />
-					<h:inputText id="path"
-						value="#{ipRuleEditMB.bean.path.url}"
+					<h:inputText id="path" value="#{ipRuleEditMB.bean.path.url}"
 						title="#{messages['IPrule.alt.path']}" required="true"></h:inputText>
 					<p:message for="path" />
-					
+
 					<h:outputLabel value="#{messages['IPrule.label.ipHeader']}: "
 						for="ipHeader" styleClass="text-input" />
-					<h:inputText id="ipHeader"
-						value="#{ipRuleEditMB.bean.ipHeader}"
+					<h:inputText id="ipHeader" value="#{ipRuleEditMB.bean.ipHeader}"
 						title="#{messages['IPrule.alt.ipHeader']}" required="true"></h:inputText>
 					<p:message for="ipHeader" />
 
 				</h:panelGrid>
 			</p:fieldset>
-			
+
 			<br />
 		</h:form>
 	</ui:define>

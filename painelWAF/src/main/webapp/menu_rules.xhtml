@@ -45,89 +45,122 @@
 	<ui:define name="body">
 		<h:form prependId="false">
 
-	<p:menubar  style="font-weight: bold; font-size: small"  rendered="#{securityContext.loggedIn}">
-				
-			<p:submenu label="#{messages['menu.addheaderrule']}">
-				<p:menuitem value="#{messages['menu.menuitem.new']}" url="/addheaderrule_edit.jsf"></p:menuitem>
-				<p:menuitem value="#{messages['menu.menuitem.list']}" url="/addheaderrule_list.jsf"></p:menuitem>
-			</p:submenu>
-			
-			<p:submenu label="#{messages['menu.addHTTPonlyflagrule']}">
-				<p:menuitem value="#{messages['menu.menuitem.new']}" url="addHTTPonlyflagrule_edit.jsf"></p:menuitem>
-				<p:menuitem value="#{messages['menu.menuitem.list']}" url="/addHTTPonlyflagrule_list.jsf"></p:menuitem>
-			</p:submenu>
-			
-			<p:submenu label="#{messages['menu.addsecureflagrule']}">
-				<p:menuitem value="#{messages['menu.menuitem.new']}" url="/addsecureflagrule_edit.jsf"></p:menuitem>
-				<p:menuitem value="#{messages['menu.menuitem.list']}" url="/addsecureflagrule_list.jsf"></p:menuitem>
-			</p:submenu>
-			
-			<p:submenu label="#{messages['menu.authenticatedrule']}">
-				<p:menuitem value="#{messages['menu.menuitem.new']}" url="/authenticatedrule_edit.jsf"></p:menuitem>
-				<p:menuitem value="#{messages['menu.menuitem.list']}" url="/authenticatedrule_list.jsf"></p:menuitem>
-			</p:submenu>
-			
-			<p:submenu label="#{messages['menu.beanshellrule']}">
-				<p:menuitem value="#{messages['menu.menuitem.new']}" url="/beanshellrule_edit.jsf"></p:menuitem>
-				<p:menuitem value="#{messages['menu.menuitem.list']}" url="/beanshellrule_list.jsf"></p:menuitem>
-			</p:submenu>
-			
-			<p:submenu label="#{messages['menu.detectoutboundcontentrule']}">
-				<p:menuitem value="#{messages['menu.menuitem.new']}" url="/detectoutboundcontentrule_edit.jsf"></p:menuitem>
-				<p:menuitem value="#{messages['menu.menuitem.list']}" url="/detectoutboundcontentrule_list.jsf"></p:menuitem>
-			</p:submenu>
-			
-			<p:submenu label="#{messages['menu.enforceHTTPSrule']}">
-				<p:menuitem value="#{messages['menu.menuitem.new']}" url="/enforceHTTPSrule_edit.jsf"></p:menuitem>
-				<p:menuitem value="#{messages['menu.menuitem.list']}" url="/enforceHTTPSrule_list.jsf"></p:menuitem>
-			</p:submenu>
-			
-			<p:submenu label="#{messages['menu.generalattacksignaturerule']}">
-				<p:menuitem value="#{messages['menu.menuitem.new']}" url="/generalattacksignaturerule_edit.jsf"></p:menuitem>
-				<p:menuitem value="#{messages['menu.menuitem.list']}" url="/generalattacksignaturerule_list.jsf"></p:menuitem>
-			</p:submenu>
-			
-			<p:submenu label="#{messages['menu.HTTPmethodrule']}">
-				<p:menuitem value="#{messages['menu.menuitem.new']}" url="/httpmethodrule_edit.jsf"></p:menuitem>
-				<p:menuitem value="#{messages['menu.menuitem.list']}" url="/httpmethodrule_list.jsf"></p:menuitem>
-			</p:submenu>
-			
-			<p:submenu label="#{messages['menu.IPrule']}">
-				<p:menuitem value="#{messages['menu.menuitem.new']}" url="/iprule_edit.jsf"></p:menuitem>
-				<p:menuitem value="#{messages['menu.menuitem.list']}" url="/iprule_list.jsf"></p:menuitem>
-			</p:submenu>
-			
-			<p:submenu label="#{messages['menu.mustmatchrule']}">
-				<p:menuitem value="#{messages['menu.menuitem.new']}" url="/mustmatchrule_edit.jsf"></p:menuitem>
-				<p:menuitem value="#{messages['menu.menuitem.list']}" url="/mustmatchrule_list.jsf"></p:menuitem>
-			</p:submenu>
-			
-			<p:submenu label="#{messages['menu.pathextensionrule']}">
-				<p:menuitem value="#{messages['menu.menuitem.new']}" url="/pathextensionrule_edit.jsf"></p:menuitem>
-				<p:menuitem value="#{messages['menu.menuitem.list']}" url="/pathextensionrule_list.jsf"></p:menuitem>
-			</p:submenu>
-			
-			<p:submenu label="#{messages['menu.replacecontentrule']}">
-				<p:menuitem value="#{messages['menu.menuitem.new']}" url="/replacecontentrule_edit.jsf"></p:menuitem>
-				<p:menuitem value="#{messages['menu.menuitem.list']}" url="/replacecontentrule_list.jsf"></p:menuitem>
-			</p:submenu>
-			
-			<p:submenu label="#{messages['menu.restrictcontenttyperule']}">
-				<p:menuitem value="#{messages['menu.menuitem.new']}" url="/restrictcontenttyperule_edit.jsf"></p:menuitem>
-				<p:menuitem value="#{messages['menu.menuitem.list']}" url="/restrictcontenttyperule_list.jsf"></p:menuitem>
-			</p:submenu>
-			
-			<p:submenu label="#{messages['menu.restrictuseragentrule']}">
-				<p:menuitem value="#{messages['menu.menuitem.new']}" url="/restrictuseragentrule_edit.jsf"></p:menuitem>
-				<p:menuitem value="#{messages['menu.menuitem.list']}" url="/restrictuseragentrule_list.jsf"></p:menuitem>
-			</p:submenu>
-			
-			<p:submenu label="#{messages['menu.simplevirtualpatchrule']}">
-				<p:menuitem value="#{messages['menu.menuitem.new']}" url="/simplevirtualpatchrule_edit.jsf"></p:menuitem>
-				<p:menuitem value="#{messages['menu.menuitem.list']}" url="/simplevirtualpatchrule_list.jsf"></p:menuitem>
-			</p:submenu>
-				
-		</p:menubar>
+			<p:menubar style="font-weight: bold; font-size: small"
+				rendered="#{securityContext.loggedIn}">
+
+				<p:submenu label="#{messages['menu.addheaderrule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/addheaderrule_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/addheaderrule_list.jsf"></p:menuitem>
+				</p:submenu>
+
+				<p:submenu label="#{messages['menu.addHTTPonlyflagrule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="addHTTPonlyflagrule_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/addHTTPonlyflagrule_list.jsf"></p:menuitem>
+				</p:submenu>
+
+				<p:submenu label="#{messages['menu.addsecureflagrule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/addsecureflagrule_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/addsecureflagrule_list.jsf"></p:menuitem>
+				</p:submenu>
+
+				<p:submenu label="#{messages['menu.authenticatedrule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/authenticatedrule_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/authenticatedrule_list.jsf"></p:menuitem>
+				</p:submenu>
+
+				<p:submenu label="#{messages['menu.beanshellrule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/beanshellrule_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/beanshellrule_list.jsf"></p:menuitem>
+				</p:submenu>
+
+				<p:submenu label="#{messages['menu.detectoutboundcontentrule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/detectoutboundcontentrule_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/detectoutboundcontentrule_list.jsf"></p:menuitem>
+				</p:submenu>
+
+				<p:submenu label="#{messages['menu.enforceHTTPSrule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/enforceHTTPSrule_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/enforceHTTPSrule_list.jsf"></p:menuitem>
+				</p:submenu>
+
+				<p:submenu label="#{messages['menu.generalattacksignaturerule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/generalattacksignaturerule_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/generalattacksignaturerule_list.jsf"></p:menuitem>
+				</p:submenu>
+
+				<p:submenu label="#{messages['menu.HTTPmethodrule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/httpmethodrule_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/httpmethodrule_list.jsf"></p:menuitem>
+				</p:submenu>
+
+				<p:submenu label="#{messages['menu.IPrule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/iprule_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/iprule_list.jsf"></p:menuitem>
+				</p:submenu>
+
+				<p:submenu label="#{messages['menu.mustmatchrule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/mustmatchrule_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/mustmatchrule_list.jsf"></p:menuitem>
+				</p:submenu>
+
+				<p:submenu label="#{messages['menu.pathextensionrule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/pathextensionrule_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/pathextensionrule_list.jsf"></p:menuitem>
+				</p:submenu>
+
+				<p:submenu label="#{messages['menu.replacecontentrule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/replacecontentrule_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/replacecontentrule_list.jsf"></p:menuitem>
+				</p:submenu>
+
+				<p:submenu label="#{messages['menu.restrictcontenttyperule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/restrictcontenttyperule_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/restrictcontenttyperule_list.jsf"></p:menuitem>
+				</p:submenu>
+
+				<p:submenu label="#{messages['menu.restrictuseragentrule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/restrictuseragentrule_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/restrictuseragentrule_list.jsf"></p:menuitem>
+				</p:submenu>
+
+				<p:submenu label="#{messages['menu.simplevirtualpatchrule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/simplevirtualpatchrule_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/simplevirtualpatchrule_list.jsf"></p:menuitem>
+				</p:submenu>
+
+			</p:menubar>
 
 		</h:form>
 	</ui:define>

@@ -49,7 +49,7 @@
 			<p:toolbar>
 				<p:toolbarGroup align="left">
 					<p:commandButton value="#{messages['button.save']}"
-						action="#{addHeaderRuleEditMB.insert}" 
+						action="#{addHeaderRuleEditMB.insert}"
 						rendered="#{!addHeaderRuleEditMB.updateMode}" ajax="false" />
 					<p:commandButton value="#{messages['button.save']}"
 						action="#{addHeaderRuleEditMB.update}"
@@ -92,46 +92,42 @@
 
 					<h:outputLabel value="#{messages['addheaderrule.label.value']}: "
 						for="value" styleClass="text-input" />
-					<h:inputText id="value"
-						value="#{addHeaderRuleEditMB.bean.value}"
+					<h:inputText id="value" value="#{addHeaderRuleEditMB.bean.value}"
 						title="#{messages['addheaderrule.alt.value']}" required="true"></h:inputText>
 					<p:message for="value" />
-					
+
 					<h:outputLabel value="#{messages['addheaderrule.label.path']}: "
 						for="path" styleClass="text-input" />
-					<h:inputText id="path"
-						value="#{addHeaderRuleEditMB.bean.path.url}"
+					<h:inputText id="path" value="#{addHeaderRuleEditMB.bean.path.url}"
 						title="#{messages['addheaderrule.alt.path']}" required="true"></h:inputText>
 					<p:message for="path" />
 
 				</h:panelGrid>
-			
+
 				<br />
-			
+
 				<p:fieldset id="pathException"
 					legend="#{messages['menu.pathexception']}" toggleable="true"
 					toggleSpeed="500">
 					<h:panelGrid id="fieldsException" columns="1">
-						<p:commandButton value="+"
-							title="#{messages['button.add']}"
+						<p:commandButton value="+" title="#{messages['button.add']}"
 							action="#{addHeaderRuleEditMB.addPathException}"
 							update="listException" />
 					</h:panelGrid>
 					<p:dataTable id="listException" var="exception"
 						resizableColumns="true"
-						value="#{addHeaderRuleEditMB.pathExceptions}"
-						rowIndexVar="index">
+						value="#{addHeaderRuleEditMB.pathExceptions}" rowIndexVar="index">
 
 						<p:columnGroup type="header">
 							<p:row>
 								<p:column headerText="#{messages['urlpath.label.path']}" />
-								<p:column headerText="#{messages['urlpath.label.regex']}"/>
+								<p:column headerText="#{messages['urlpath.label.regex']}" />
 								<p:column headerText="#{messages['label.acao']}" />
 							</p:row>
 						</p:columnGroup>
 
-						<p:column sortBy="#{exception.url}" >
-							<p:inputText value="#{exception.url}" style="width:100%"/>
+						<p:column sortBy="#{exception.url}">
+							<p:inputText value="#{exception.url}" style="width:100%" />
 						</p:column>
 
 						<p:column style="text-align: center;">
@@ -139,8 +135,8 @@
 						</p:column>
 
 						<p:column style="text-align: center;">
-							<p:commandButton  icon="ui-icon-trash"								
-								title="#{messages['button.delete']}"							
+							<p:commandButton icon="ui-icon-trash"
+								title="#{messages['button.delete']}"
 								action="#{addHeaderRuleEditMB.deletePathException}"
 								update="listException" ajax="true" />
 						</p:column>
@@ -148,7 +144,7 @@
 				</p:fieldset>
 
 			</p:fieldset>
-			
+
 			<br />
 		</h:form>
 	</ui:define>

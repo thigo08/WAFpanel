@@ -31,25 +31,12 @@
 		<filter-name>PrimeFaces FileUpload Filter</filter-name>
 		<servlet-name>Faces Servlet</servlet-name>
 	</filter-mapping>
-	
-<!-- 	
-	<filter>
-    <filter-name>ESAPI-WAF</filter-name>
-    <filter-class>org.owasp.esapi.waf.ESAPIWebApplicationFirewallFilter</filter-class>
-    <init-param>
-    <param-name>log_settings</param-name>
-            <param-value>WEB-INF/config/log4j.properties</param-value>
-        </init-param>
-        <init-param>
-            <param-name>configuration</param-name>
-            <param-value>WEB-INF/waf/waf-policy.xml</param-value>
-        </init-param>
-    </filter>
-	<filter-mapping>
-	    <filter-name>ESAPI-WAF</filter-name>
-	    <url-pattern>/*</url-pattern>
-	</filter-mapping>
---> 
+
+	<!-- <filter> <filter-name>ESAPI-WAF</filter-name> <filter-class>org.owasp.esapi.waf.ESAPIWebApplicationFirewallFilter</filter-class> 
+		<init-param> <param-name>log_settings</param-name> <param-value>WEB-INF/config/log4j.properties</param-value> 
+		</init-param> <init-param> <param-name>configuration</param-name> <param-value>WEB-INF/waf/waf-policy.xml</param-value> 
+		</init-param> </filter> <filter-mapping> <filter-name>ESAPI-WAF</filter-name> 
+		<url-pattern>/*</url-pattern> </filter-mapping> -->
 
 	<context-param>
 		<param-name>primefaces.THEME</param-name>

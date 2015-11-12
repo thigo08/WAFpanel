@@ -49,15 +49,17 @@
 			<p:toolbar>
 				<p:toolbarGroup align="left">
 					<p:commandButton value="#{messages['button.save']}"
-						action="#{restrictContentTypeRuleEditMB.insert}" 
-						rendered="#{!restrictContentTypeRuleEditMB.updateMode}" ajax="false" />
+						action="#{restrictContentTypeRuleEditMB.insert}"
+						rendered="#{!restrictContentTypeRuleEditMB.updateMode}"
+						ajax="false" />
 					<p:commandButton value="#{messages['button.save']}"
 						action="#{restrictContentTypeRuleEditMB.update}"
-						rendered="#{restrictContentTypeRuleEditMB.updateMode}" ajax="false" />
+						rendered="#{restrictContentTypeRuleEditMB.updateMode}"
+						ajax="false" />
 					<p:commandButton value="#{messages['button.delete']}"
 						onclick="PF('confirmation').show()"
-						rendered="#{restrictContentTypeRuleEditMB.updateMode}" type="button"
-						immediate="true" ajax="false"
+						rendered="#{restrictContentTypeRuleEditMB.updateMode}"
+						type="button" immediate="true" ajax="false"
 						disabled="#{!securityContext.hasRole('gerente')}" />
 					<p:confirmDialog message="#{messages['label.confirm.delete']}"
 						showEffect="bounce" hideEffect="explode"
@@ -78,28 +80,35 @@
 				toggleable="true" toggleSpeed="500">
 				<h:panelGrid id="fields" columns="3" cellpadding="2" cellspacing="4">
 
-					<h:outputLabel value="#{messages['restrictcontenttyperule.label.id']}: "
-						for="id" styleClass="text-input" />
-					<h:outputText id="id" value="#{restrictContentTypeRuleEditMB.bean.id}" />
+					<h:outputLabel
+						value="#{messages['restrictcontenttyperule.label.id']}: " for="id"
+						styleClass="text-input" />
+					<h:outputText id="id"
+						value="#{restrictContentTypeRuleEditMB.bean.id}" />
 					<p:message for="id" />
 
-					<h:outputLabel value="#{messages['restrictcontenttyperule.label.allow']}: "
+					<h:outputLabel
+						value="#{messages['restrictcontenttyperule.label.allow']}: "
 						for="allow" styleClass="text-input" />
-					<h:inputText id="allow" value="#{restrictContentTypeRuleEditMB.bean.allow.regex}"
-						title="#{messages['restrictcontenttyperule.alt.allow']}" required="true">
+					<h:inputText id="allow"
+						value="#{restrictContentTypeRuleEditMB.bean.allow.regex}"
+						title="#{messages['restrictcontenttyperule.alt.allow']}"
+						required="true">
 					</h:inputText>
 					<p:message for="allow" />
 
-					<h:outputLabel value="#{messages['restrictcontenttyperule.label.deny']}: "
+					<h:outputLabel
+						value="#{messages['restrictcontenttyperule.label.deny']}: "
 						for="deny" styleClass="text-input" />
 					<h:inputText id="deny"
 						value="#{restrictContentTypeRuleEditMB.bean.deny.regex}"
-						title="#{messages['restrictcontenttyperule.alt.deny']}" required="true"></h:inputText>
+						title="#{messages['restrictcontenttyperule.alt.deny']}"
+						required="true"></h:inputText>
 					<p:message for="deny" />
 
 				</h:panelGrid>
 			</p:fieldset>
-			
+
 			<br />
 		</h:form>
 	</ui:define>

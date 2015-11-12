@@ -1,6 +1,8 @@
-<html xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui"
-	xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
-	
+<html xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
 <f:view contentType="text/html" locale="#{locales.currentLocale}" />
 
 <h:head>
@@ -11,11 +13,11 @@
 <h:body style="background-color:#f1f1f1">
 	<table style="width: 100%">
 		<tr>
-			<td height="70" align="center">
-				<a href="desktop_welcome.jsf"><img src="resources/images/logo1.png" width="60" height="60" border="0" /></a>
-			</td>			
+			<td height="70" align="center"><a href="desktop_welcome.jsf"><img
+					src="resources/images/logo1.png" width="60" height="60" border="0" /></a>
+			</td>
 		</tr>
-		<div align="center" > 
+		<div align="center">
 			<p:panel>
 			#{messages['main.configuracao']}
 			</p:panel>
@@ -30,17 +32,19 @@
 			<td height="20" colspan="2" align="center" class="text-input">#{messages['main.footer.text']}</td>
 		</tr>
 		<tr align="center">
-			<td height="20" colspan="2" align="center" class="text-input"><img src="resources/images/bottom1.png"  width="100" height="78" border="0" /></td>
+			<td height="20" colspan="2" align="center" class="text-input"><img
+				src="resources/images/bottom1.png" width="100" height="78"
+				border="0" /></td>
 		</tr>
 		<tr>
-				<div style="float: right;">
+			<div style="float: right;">
 				<h:form>
-					   	<p:commandButton value="Help" ajax="false"  icon="ui-icon-help">
-					    	<p:fileDownload value="#{fileDownloadView.file}" />
-					    </p:commandButton>
-					</h:form>
-				</div>
-			</tr>
+					<p:commandButton value="Help" ajax="false" icon="ui-icon-help">
+						<p:fileDownload value="#{fileDownloadView.file}" />
+					</p:commandButton>
+				</h:form>
+			</div>
+		</tr>
 	</table>
 
 	<p:growl id="messages" globalOnly="true" />
