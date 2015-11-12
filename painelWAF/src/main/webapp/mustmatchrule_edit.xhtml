@@ -1,0 +1,120 @@
+
+<!-- 
+ Demoiselle Framework
+ Copyright (C) 2013 SERPRO
+ ============================================================================
+ This file is part of Demoiselle Framework.
+ 
+ Demoiselle Framework is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public License version 3
+ as published by the Free Software Foundation.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public License version 3
+ along with this program; if not,  see <http://www.gnu.org/licenses/>
+ or write to the Free Software Foundation, Inc., 51 Franklin Street,
+ Fifth Floor, Boston, MA  02110-1301, USA.
+ ============================================================================
+ Este arquivo é parte do Framework Demoiselle.
+ 
+ O Framework Demoiselle é um software livre; você pode redistribuí-lo e/ou
+ modificá-lo dentro dos termos da GNU LGPL versão 3 como publicada pela Fundação
+ do Software Livre (FSF).
+ 
+ Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA
+ GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer MERCADO ou
+ APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU/LGPL em português
+ para maiores detalhes.
+ 
+ Você deve ter recebido uma cópia da GNU LGPL versão 3, sob o título
+ "LICENCA.txt", junto com esse programa. Se não, acesse <http://www.gnu.org/licenses/>
+ ou escreva para a Fundação do Software Livre (FSF) Inc.,
+ 51 Franklin St, Fifth Floor, Boston, MA 02111-1301, USA.
+ */
+ -->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/main.xhtml">
+
+	<ui:define name="body">
+		<h:form prependId="false">
+
+			<p:toolbar>
+				<p:toolbarGroup align="left">
+					<p:commandButton value="#{messages['button.save']}"
+						action="#{mustMatchRuleEditMB.insert}" 
+						rendered="#{!mustMatchRuleEditMB.updateMode}" ajax="false" />
+					<p:commandButton value="#{messages['button.save']}"
+						action="#{mustMatchRuleEditMB.update}"
+						rendered="#{mustMatchRuleEditMB.updateMode}" ajax="false" />
+					<p:commandButton value="#{messages['button.delete']}"
+						onclick="PF('confirmation').show()"
+						rendered="#{mustMatchRuleEditMB.updateMode}" type="button"
+						immediate="true" ajax="false"
+						disabled="#{!securityContext.hasRole('gerente')}" />
+					<p:confirmDialog message="#{messages['label.confirm.delete']}"
+						showEffect="bounce" hideEffect="explode"
+						header="#{messages['label.dialog.delete']}" severity="alert"
+						widgetVar="confirmation">
+						<h:commandButton value="#{messages['button.dialog.yes']}"
+							action="#{mustMatchRuleEditMB.delete}" immediate="true"
+							ajax="false" />
+						<h:commandButton value="#{messages['button.dialog.no']}"
+							onclick="PF('confirmation').hide();" type="button" />
+					</p:confirmDialog>
+				</p:toolbarGroup>
+			</p:toolbar>
+
+			<br />
+
+			<p:fieldset legend="#{messages['mustmatchrule.label']}"
+				toggleable="true" toggleSpeed="500">
+				<h:panelGrid id="fields" columns="3" cellpadding="2" cellspacing="4">
+
+					<h:outputLabel value="#{messages['mustmatchrule.label.id']}: "
+						for="id" styleClass="text-input" />
+					<h:outputText id="id" value="#{mustMatchRuleEditMB.bean.id}" />
+					<p:message for="id" />
+
+					<h:outputLabel value="#{messages['mustmatchrule.label.path']}: "
+						for="path" styleClass="text-input" />
+					<h:inputText id="path" value="#{mustMatchRuleEditMB.bean.path.url}"
+						title="#{messages['mustmatchrule.alt.path']}" required="true">
+					</h:inputText>
+					<p:message for="path" />
+
+					<h:outputLabel value="#{messages['mustmatchrule.label.variable']}: "
+						for="variable" styleClass="text-input" />
+					<h:inputText id="variable"
+						value="#{mustMatchRuleEditMB.bean.variable}"
+						title="#{messages['mustmatchrule.alt.variable']}" required="true"></h:inputText>
+					<p:message for="variable" />
+					
+					<h:outputLabel value="#{messages['mustmatchrule.label.operator']}: "
+						for="operator" styleClass="text-input" />
+					<h:inputText id="operator"
+						value="#{mustMatchRuleEditMB.bean.operator}"
+						title="#{messages['mustmatchrule.alt.operator']}" required="true"></h:inputText>
+					<p:message for="operator" />
+					
+					<h:outputLabel value="#{messages['mustmatchrule.label.value']}: "
+						for="value" styleClass="text-input" />
+					<h:inputText id="value"
+						value="#{mustMatchRuleEditMB.bean.value}"
+						title="#{messages['mustmatchrule.alt.value']}" required="true"></h:inputText>
+					<p:message for="value" />
+
+				</h:panelGrid>
+			</p:fieldset>
+			
+			<br />
+		</h:form>
+	</ui:define>
+</ui:composition>

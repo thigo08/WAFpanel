@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    
+<persistence-unit name="painelwaf-ds" transaction-type="RESOURCE_LOCAL">
+       
+        <non-jta-data-source>java:jboss/datasources/PostgreSqlDS</non-jta-data-source>
+          
+        <class>org.owasp.esapi.waf.configuration.AppGuardianConfiguration</class>
+        <class>org.owasp.esapi.waf.configuration.Alias</class>
+        
+        <class>org.owasp.esapi.waf.rules.AddHeaderRule</class>
+        <class>org.owasp.esapi.waf.rules.AddHTTPOnlyFlagRule</class>
+        <class>org.owasp.esapi.waf.rules.AddSecureFlagRule</class>
+        <class>org.owasp.esapi.waf.rules.AuthenticatedRule</class>
+        <class>org.owasp.esapi.waf.rules.BeanShellRule</class>
+        <class>org.owasp.esapi.waf.rules.DetectOutboundContentRule</class>
+        <class>org.owasp.esapi.waf.rules.EnforceHTTPSRule</class>
+        <class>org.owasp.esapi.waf.rules.GeneralAttackSignatureRule</class>
+        <class>org.owasp.esapi.waf.rules.HTTPMethodRule</class>
+        <class>org.owasp.esapi.waf.rules.IPRule</class>
+        <class>org.owasp.esapi.waf.rules.MustMatchRule</class>
+        <class>org.owasp.esapi.waf.rules.PathExtensionRule</class>
+        <class>org.owasp.esapi.waf.rules.ReplaceContentRule</class>
+        <class>org.owasp.esapi.waf.rules.RestrictContentTypeRule</class>
+        <class>org.owasp.esapi.waf.rules.RestrictUserAgentRule</class>
+        <class>org.owasp.esapi.waf.rules.SimpleVirtualPatchRule</class>
+        <class>org.owasp.esapi.waf.rules.Rule</class>
+        
+        <class>org.owasp.esapi.waf.rules.support.UrlPath</class>
+        <class>org.owasp.esapi.waf.rules.support.PatternEntity</class>
+        <class>org.owasp.esapi.waf.rules.support.RuleWithAllowDeny</class>
+        <class>org.owasp.esapi.waf.rules.support.RuleWithExceptions</class>
+        <class>org.owasp.esapi.waf.rules.support.RuleWithPatterns</class>
+        <class>org.owasp.esapi.waf.rules.support.RuleWithUrlPath</class>
+        
+		<properties>
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+        </properties>
+    </persistence-unit>
+    
+</persistence>

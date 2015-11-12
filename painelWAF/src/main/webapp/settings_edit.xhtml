@@ -1,0 +1,119 @@
+<!-- 
+ Demoiselle Framework
+ Copyright (C) 2013 SERPRO
+ ============================================================================
+ This file is part of Demoiselle Framework.
+ 
+ Demoiselle Framework is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public License version 3
+ as published by the Free Software Foundation.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public License version 3
+ along with this program; if not,  see <http://www.gnu.org/licenses/>
+ or write to the Free Software Foundation, Inc., 51 Franklin Street,
+ Fifth Floor, Boston, MA  02110-1301, USA.
+ ============================================================================
+ Este arquivo é parte do Framework Demoiselle.
+ 
+ O Framework Demoiselle é um software livre; você pode redistribuí-lo e/ou
+ modificá-lo dentro dos termos da GNU LGPL versão 3 como publicada pela Fundação
+ do Software Livre (FSF).
+ 
+ Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA
+ GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer MERCADO ou
+ APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU/LGPL em português
+ para maiores detalhes.
+ 
+ Você deve ter recebido uma cópia da GNU LGPL versão 3, sob o título
+ "LICENCA.txt", junto com esse programa. Se não, acesse <http://www.gnu.org/licenses/>
+ ou escreva para a Fundação do Software Livre (FSF) Inc.,
+ 51 Franklin St, Fifth Floor, Boston, MA 02111-1301, USA.
+ */
+ -->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/main.xhtml">
+
+	<ui:define name="body">
+		<h:form prependId="false">
+
+			<p:toolbar>
+				<p:toolbarGroup align="left">
+					<p:commandButton value="#{messages['button.save']}"
+						action="#{settingsEditMB.insert}" 
+						rendered="#{!settingsEditMB.updateMode}" ajax="false" />
+					<p:commandButton value="#{messages['button.save']}"
+						action="#{settingsEditMB.update}"
+						rendered="#{settingsEditMB.updateMode}" ajax="false" />
+					<p:commandButton value="#{messages['button.delete']}"
+						onclick="PF('confirmation').show()"
+						rendered="#{settingsEditMB.updateMode}" type="button"
+						immediate="true" ajax="false"
+						disabled="#{!securityContext.hasRole('gerente')}" />
+					<p:confirmDialog message="#{messages['label.confirm.delete']}"
+						showEffect="bounce" hideEffect="explode"
+						header="#{messages['label.dialog.delete']}" severity="alert"
+						widgetVar="confirmation">
+						<h:commandButton value="#{messages['button.dialog.yes']}"
+							action="#{settingsEditMB.delete}" immediate="true"
+							ajax="false" />
+						<h:commandButton value="#{messages['button.dialog.no']}"
+							onclick="PF('confirmation').hide();" type="button" />
+					</p:confirmDialog>
+				</p:toolbarGroup>
+			</p:toolbar>
+
+			<br />
+
+			<p:fieldset legend="#{messages['settings.label']}"
+				toggleable="true" toggleSpeed="500">
+				<h:panelGrid id="fields" columns="3" cellpadding="2" cellspacing="4">
+					
+
+					 <p:outputLabel for="mode" value="#{messages['settings.label.mode']}: " />
+       				 <p:selectOneMenu id="mode" value="#{settingsEditMB.bean.defaultFailAction}" style="width:125px">
+			         	<f:selectItem itemLabel="LOG" itemValue="0" />			            
+			            <f:selectItem itemLabel="REDIRECT" itemValue="1" />
+			            <f:selectItem itemLabel="BLOCK" itemValue="2" />
+       				</p:selectOneMenu>
+					<p:message for="mode" />
+
+					<h:outputLabel value="#{messages['settings.label.sessionCookieName']}: "
+						for="sessionCookieName" styleClass="text-input" />
+					<h:inputText id="sessionCookieName"
+						value="#{settingsEditMB.bean.sessionCookieName}"
+						title="#{messages['settings.alt.sessionCookieName']}" required="true"></h:inputText>
+					<p:message for="sessionCookieName" />
+					
+					<h:outputLabel value="#{messages['settings.label.defaultErrorPage']}: "
+						for="defaultErrorPage" styleClass="text-input" />
+					<h:inputText id="defaultErrorPage"
+						value="#{settingsEditMB.bean.defaultErrorPage}"
+						title="#{messages['settings.alt.defaultErrortPage']}" required="true"></h:inputText>
+					<p:message for="defaultErrorPage" />
+					
+					 <p:outputLabel for="mode" value="#{messages['settings.label.blockStatus']}: " />
+       				 <p:selectOneMenu id="blockStatus" value="#{settingsEditMB.bean.defaultResponseCode}" style="width:206px">
+       				 	<f:selectItem itemLabel="400 - Bad Request" itemValue="400" />		
+			         	<f:selectItem itemLabel="401 - Unauthorized" itemValue="401" />			            
+			            <f:selectItem itemLabel="403 - Forbidden" itemValue="403" />
+			            <f:selectItem itemLabel="404 - Not Found" itemValue="404" />
+			            <f:selectItem itemLabel="500 - Internal Server Error" itemValue="500" />
+       				</p:selectOneMenu>
+					<p:message for="blockStatus" />
+
+				</h:panelGrid>
+			</p:fieldset>
+			
+			<br />
+		</h:form>
+	</ui:define>
+</ui:composition>
