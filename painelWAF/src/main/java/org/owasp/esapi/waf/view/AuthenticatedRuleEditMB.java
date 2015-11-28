@@ -35,7 +35,6 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 
 import org.owasp.esapi.waf.business.AuthenticatedRuleBC;
-import org.owasp.esapi.waf.business.UrlPathBC;
 import org.owasp.esapi.waf.rules.AuthenticatedRule;
 import org.owasp.esapi.waf.rules.support.UrlPath;
 
@@ -55,9 +54,6 @@ public class AuthenticatedRuleEditMB extends AbstractEditPageBean<AuthenticatedR
 	@Inject
 	private AuthenticatedRuleBC authenticatedRuleBC;
 	
-	@Inject
-	private UrlPathBC urlPathBC;
-	
 	@Override
 	@Transactional
 	public String delete() {
@@ -67,11 +63,7 @@ public class AuthenticatedRuleEditMB extends AbstractEditPageBean<AuthenticatedR
 	
 	@Override
 	@Transactional
-	public String insert() {
-		AuthenticatedRule authtenticatedRule = getBean();
-				
-		urlPathBC.insert(authtenticatedRule.getPath());
-		
+	public String insert() {		
 		this.authenticatedRuleBC.insert(getBean());
 		return getPreviousView();
 	}

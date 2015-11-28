@@ -35,7 +35,6 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 
 import org.owasp.esapi.waf.business.AddHeaderRuleBC;
-import org.owasp.esapi.waf.business.UrlPathBC;
 import org.owasp.esapi.waf.rules.AddHeaderRule;
 import org.owasp.esapi.waf.rules.support.UrlPath;
 
@@ -54,9 +53,6 @@ public class AddHeaderRuleEditMB extends AbstractEditPageBean<AddHeaderRule, Str
 	
 	@Inject
 	private AddHeaderRuleBC addHeaderRuleBC;
-	
-	@Inject
-	private UrlPathBC urlPathBC;
 	
 	@Override
 	@Transactional

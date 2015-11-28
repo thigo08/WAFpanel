@@ -35,13 +35,15 @@ import javax.inject.Inject;
 import org.owasp.esapi.waf.business.AppGuardianConfigurationBC;
 import org.owasp.esapi.waf.configuration.AppGuardianConfiguration;
 
+import br.gov.frameworkdemoiselle.annotation.NextView;
 import br.gov.frameworkdemoiselle.annotation.PreviousView;
 import br.gov.frameworkdemoiselle.stereotype.ViewController;
 import br.gov.frameworkdemoiselle.template.AbstractEditPageBean;
 import br.gov.frameworkdemoiselle.transaction.Transactional;
 
 @ViewController
-@PreviousView("./settings_list.jsf")
+@NextView("./settings_edit.jsf")
+@PreviousView("./settings_edit.jsf")
 public class SettingsEditMB extends AbstractEditPageBean<AppGuardianConfiguration, Long> {
 
 	private static final long serialVersionUID = 1L;
@@ -60,7 +62,7 @@ public class SettingsEditMB extends AbstractEditPageBean<AppGuardianConfiguratio
 	@Transactional
 	public String insert() {	
 		
-		return getPreviousView();
+		return getNextView();
 	}
 	
 	public Long getSingletonID(){

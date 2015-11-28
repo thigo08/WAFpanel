@@ -153,6 +153,10 @@ public class AppGuardianConfiguration {
 	private List<Rule> cookieRules;
 
 	public AppGuardianConfiguration() {
+		this.setDefaultFailAction(LOG);
+		this.setSessionCookieName("/");
+		this.setDefaultResponseCode(400);
+		this.setDefaultErrorPage("/");
 		beforeBodyRules = new ArrayList<Rule>();
 		afterBodyRules = new ArrayList<Rule>();
 		beforeResponseRules = new ArrayList<Rule>();
