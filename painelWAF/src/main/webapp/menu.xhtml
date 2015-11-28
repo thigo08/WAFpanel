@@ -52,8 +52,7 @@
 				icon="ui-icon-document">
 				<f:param name="i" value="1" />
 			</p:menuitem>
-			<p:menuitem value="Setting" url="/settings_edit.jsf"
-				actionListener="#{settingsListMB.clear}" icon="ui-icon-wrench">
+			<p:menuitem value="Setting" outcome="/settings_edit.jsf" icon="ui-icon-wrench">
 				<f:param name="i" value="2" />
 				<f:param name="id" value="#{settingsEditMB.singletonID}" />
 			</p:menuitem>
