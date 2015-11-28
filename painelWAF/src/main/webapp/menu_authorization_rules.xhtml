@@ -44,34 +44,30 @@
 
 	<ui:define name="body">
 		<h:form prependId="false">
-		<center>
-			<p:breadCrumb>
-				<p:menuitem value="Categories" outcome="/desktop_welcome.jsf">
-				<f:param name="i" value="1" />
-				</p:menuitem>
-				<p:menuitem value="Authentication-Rules" outcome="/menu_authentication_rules.jsf">
-				<f:param name="i" value="1" />
-				</p:menuitem>
-				<p:menuitem value="Authorization-Rules" outcome="/menu_authorization_rules.jsf">
-				<f:param name="i" value="1" />
-				</p:menuitem>
-				<p:menuitem value="URL-Rules" outcome="/menu_url_rules.jsf">
-				<f:param name="i" value="1" />
-				</p:menuitem>
-				<p:menuitem value="Header-Rules" outcome="/menu_header_rules.jsf">
-				<f:param name="i" value="1" />
-				</p:menuitem>
-				<p:menuitem value="Virtual-Patches" outcome="/menu_virtual_patches.jsf">
-				<f:param name="i" value="1" />
-				</p:menuitem>
-				<p:menuitem value="Outbound-Rules" outcome="/menu_outbound_rules.jsf">
-				<f:param name="i" value="1" />
-				</p:menuitem>
-				<p:menuitem value="Bean-Shell-Rules" outcome="/menu_bean_shell_rules.jsf">
-				<f:param name="i" value="1" />
-				</p:menuitem>
-			</p:breadCrumb>
-			</center>
+
+			<h3 style="font-size: 20px">
+				<center>Authorization-Rules</center>
+			</h3>
+			
+			<p:menubar style="font-weight: bold; font-size: small"
+				rendered="#{securityContext.loggedIn}">
+
+				<p:submenu label="#{messages['menu.IPrule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						outcome="/iprule_edit.jsf"><f:param name="i" value="1" /></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						outcome="/iprule_list.jsf"><f:param name="i" value="1" /></p:menuitem>
+				</p:submenu>
+				
+								<p:submenu label="#{messages['menu.mustmatchrule']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						outcome="/mustmatchrule_edit.jsf"><f:param name="i" value="1" /></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						outcome="/mustmatchrule_list.jsf"><f:param name="i" value="1" /></p:menuitem>
+				</p:submenu>
+
+			</p:menubar>
+
 		</h:form>
 	</ui:define>
 </ui:composition>
